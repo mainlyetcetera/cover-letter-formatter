@@ -1,15 +1,15 @@
 ## What is this
 
-This is a very simple app that helps one properly format a cover letter.
-Duly, I am calling it the Cover Letter Formatter. Yes. Very original. I know.
-My inspiration for this was the very lengthy process of tailoring a cover letter for each company I am applying to.
+This is a very simple app that helps one properly format a cover letter.\
+Duly, I am calling it the Cover Letter Formatter. Yes. Very original. I know.\
+My inspiration for this was the very lengthy process of tailoring a cover letter for each company I am applying to.\
 The hope is that this will cut down on the time it takes to write a solid cover letter by at least half! 
 
 ## What does it do
 
-The Cover Letter Formatter gives you 8 input fields, takes your responses to those fields, and formats it into a cover letter.
-There is a fair amount of boilerplate cover letter, but allows you to adjust the important bits.
-Once you hit submit, you are shown the entire cover letter, and may easily copy-paste from there.
+The Cover Letter Formatter gives you 8 input fields, takes your responses to those fields, and formats it into a cover letter.\
+There is a fair amount of boilerplate cover letter, but allows you to adjust the important bits.\
+Once you hit submit, you are shown the entire cover letter, and may easily copy-paste from there.\
 This should be put into a pretty document if allowed, but many places want you to just paste the letter directly.
 
 ## To Begin
