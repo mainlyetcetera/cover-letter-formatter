@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import './App.css'
 import Form from '../Form/Form'
+import template from '../../template/template'
+import addDetails from '../../template/addDetails'
 
 type data = {
   company: string
@@ -28,7 +30,7 @@ function App() {
         placeholder='specific qualifications'
         name='specific qualifications'
         readOnly={true}
-        value={letter}
+        value={template}
       />
     </div>
   )
