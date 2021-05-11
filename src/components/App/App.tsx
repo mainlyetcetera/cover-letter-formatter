@@ -6,9 +6,8 @@ import Form from '../Form/Form'
 function App() {
   const [letter, setLetter] = useState<string>('')
 
-  function handleClick(e: any) {
+  const handleClick = (e: any) => {
     e.preventDefault()
-    // console.log(e)
     setLetter(e.target.value)
   }
 
