@@ -5,32 +5,25 @@ import './App.css'
 import Form from '../Form/Form'
 import template from '../../template/template'
 import addDetails from '../../template/addDetails'
-
-type data = {
-  company: string
-  why: string
-  specifics: string
-  numValues: number
-  values: string
-}
+import * as types from '../../types/types'
 
 function App() {
   const [letter, setLetter] = useState<string>('')
 
-  const addLetter = (details: data) => {
-    setLetter(`${details.company}`)
+  const addLetter = (details: types.data) => {
+    setLetter(addDetails(details))
   }
 
   return (
     <div className="App">
       App
       <Form addLetter={addLetter} />
-      <input
-        type='text'
-        placeholder='specific qualifications'
-        name='specific qualifications'
+      <textarea
+        className='result'
+        placeholder='result'
+        name='result'
         readOnly={true}
-        value={template}
+        value={letter}
       />
     </div>
   )

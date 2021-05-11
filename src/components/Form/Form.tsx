@@ -10,16 +10,19 @@ interface Props {
 }
 
 const Form: React.FC<Props> = ({ addLetter }) => {
+  const [date, setDate] = useState<string>('')
+  const [position, setPosition] = useState<string>('')
   const [company, setCompany] = useState<string>('')
   const [why, setWhy] = useState<string>('')
   const [specifics, setSpecifics] = useState<string>('')
   const [numValues, setNumValues] = useState<number>(0)
   const [values, setValues] = useState<string>('')
+  const [primeValue, setPrimeValue] = useState<string>('')
 
   const submitInputs = (e: any) => {
     e.preventDefault()
     const data = {
-      company, why, specifics, numValues, values
+      date, position, company, why, specifics, numValues, values, primeValue
     }
 
     addLetter(data)
@@ -29,12 +32,28 @@ const Form: React.FC<Props> = ({ addLetter }) => {
     <form>
       <input
         type='text'
-        placeholder='company name'
-        name='company-name'
+        placeholder='date'
+        name='date'
+        value={date}
+        onChange={e => setDate(e.target.value)}
+      />
+
+      <input
+        type='text'
+        placeholder='position'
+        name='position'
+        value={position}
+        onChange={e => setPosition(e.target.value)}
+      />
+
+      <input
+        type='text'
+        placeholder='company'
+        name='company'
         value={company}
         onChange={e => setCompany(e.target.value)}
       />
-
+       
       <input
         type='text'
         placeholder='why want work here'
@@ -65,6 +84,14 @@ const Form: React.FC<Props> = ({ addLetter }) => {
         name='values'
         value={values}
         onChange={e => setValues(e.target.value)}
+      />
+
+      <input
+        type='text'
+        placeholder='primeValue'
+        name='primeValue'
+        value={primeValue}
+        onChange={e => setPrimeValue(e.target.value)}
       />
 
       <button onClick={e => submitInputs(e)}>SUBMIT</button>
