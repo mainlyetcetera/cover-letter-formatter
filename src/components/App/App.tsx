@@ -22,7 +22,6 @@ function App() {
         className='result'
         placeholder='result'
         name='result'
-        readOnly={true}
         value={letter}
       />
     </div>
