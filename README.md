@@ -1,10 +1,22 @@
-# Getting Started with Create React App
+## What is this
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a very simple app that helps one properly format a cover letter.
+Duly, I am calling it the Cover Letter Formatter. Yes. Very original. I know.
+My inspiration for this was the very lengthy process of tailoring a cover letter for each company I am applying to.
+The hope is that this will cut down on the time it takes to write a solid cover letter by at least half! 
 
-## Available Scripts
+## What does it do
 
-In the project directory, you can run:
+The Cover Letter Formatter gives you 8 input fields, takes your responses to those fields, and formats it into a cover letter.
+There is a fair amount of boilerplate cover letter, but allows you to adjust the important bits.
+Once you hit submit, you are shown the entire cover letter, and may easily copy-paste from there.
+This should be put into a pretty document if allowed, but many places want you to just paste the letter directly.
+
+## To Begin
+
+- fork the project, repo can be found [here]()
+- run `yarn start`
+- adjust the `tsconfig.json` as described below
 
 ### `yarn start`
 
@@ -14,33 +26,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+`yarn start` is causing some unusual behavior with TypeScript. It resets the `tsconfig.json` to a setting that does not recognize `jsx`.
+To fix, manually adjust line 21 of `tsconfig.json` to `"jsx": "react"`. This suppresses the jsx warning.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The `--template Typescript` was applied.
 
-### `yarn build`
+## Future Iterations
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+There are several things I would like to do with this app over time:
+- fully deploy the app, making it more readily available
+- attach a PostgreSQL database which will store completed cover letters, making it easy to access them again
+- allow the user to edit the cover letter after one has been generated to allow further customization before sending
+- style the app...
+- update the cover letter live as the user inputs their responses
+  - it would be neat if the user could still update the cover letter in the field itself even with live-update allowed
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Wins
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- increased experience using `TypeScript` alongside `React`
+- built something I will actually use on a regular basis!
 
-### `yarn eject`
+## Challenges
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- still some typing I want to make more strict, particularly as it comes to `Events`
+- app is frail and could easily be broken in its current form
+  - hence why it is not yet deployed
