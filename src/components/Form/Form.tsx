@@ -1,28 +1,29 @@
-/*
-company name
-why want work there
-any people I talked to
-general qualification info
-specific qualification info
-number company values
-company values
-*/
-
+// how do I use this to use strict typing? 
 // import React, { useState, MouseEvent } from 'react'
 import React, { useState } from 'react'
 
 interface Props {
-  // handleClick: ((e: { target: { value: React.SetStateAction<string> } }) => void) 
-  // handleClick: ((e: MouseEvent<HTMLButtonElement, MouseEvent>) => void) 
-  handleClick: any 
+  // how do I use this to use strict typing? 
+  // addLetter: ((e: { target: { value: React.SetStateAction<string> } }) => void) 
+  // addLetter: ((e: MouseEvent<HTMLButtonElement, MouseEvent>) => void) 
+  addLetter: any
 }
 
-const Form: React.FC<Props> = ({handleClick}) => {
+const Form: React.FC<Props> = ({ addLetter }) => {
   const [company, setCompany] = useState<string>('')
   const [why, setWhy] = useState<string>('')
   const [specifics, setSpecifics] = useState<string>('')
   const [numValues, setNumValues] = useState<number>(0)
   const [values, setValues] = useState<string>('')
+
+  const submitInputs = (e: any) => {
+    e.preventDefault()
+    const data = {
+      company, why, specifics, numValues, values
+    }
+
+    addLetter(data)
+  }
 
   return (
     <form>
@@ -66,7 +67,7 @@ const Form: React.FC<Props> = ({handleClick}) => {
         onChange={e => setValues(e.target.value)}
       />
 
-      <button onClick={e => handleClick(e)}>SUBMIT</button>
+      <button onClick={e => submitInputs(e)}>SUBMIT</button>
     </form>
   )
 }
