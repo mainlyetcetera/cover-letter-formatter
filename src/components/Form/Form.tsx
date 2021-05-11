@@ -8,10 +8,17 @@ number company values
 company values
 */
 
+// import React, { useState, MouseEvent } from 'react'
 import React, { useState } from 'react'
 
-export default function Form() {
-  const [name, setName] = useState<string>('')
+interface Props {
+  // handleClick: ((e: { target: { value: React.SetStateAction<string> } }) => void) 
+  // handleClick: ((e: MouseEvent<HTMLButtonElement, MouseEvent>) => void) 
+  handleClick: any 
+}
+
+const Form: React.FC<Props> = ({handleClick}) => {
+  const [company, setCompany] = useState<string>('')
   const [why, setWhy] = useState<string>('')
   const [specifics, setSpecifics] = useState<string>('')
   const [numValues, setNumValues] = useState<number>(0)
@@ -23,8 +30,8 @@ export default function Form() {
         type='text'
         placeholder='company name'
         name='company-name'
-        value={name}
-        onChange={e => setName(e.target.value)}
+        value={company}
+        onChange={e => setCompany(e.target.value)}
       />
 
       <input
@@ -59,7 +66,9 @@ export default function Form() {
         onChange={e => setValues(e.target.value)}
       />
 
-      <button onClick={undefined}>SUBMIT</button>
+      <button onClick={e => handleClick(e)}>SUBMIT</button>
     </form>
   )
 }
+
+export default Form
